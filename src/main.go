@@ -41,6 +41,44 @@ func split(sum int) (x, y int) {
 	return
 }
 
+func forexamp () {
+	// 평범한 반복문
+	sum := 0
+	for i := 0; i < 10 ;i++ {
+		sum += i
+	}
+	fmt.Println(sum)
+
+	// while 같이 사용 할수 있다
+	for sum < 1000 {
+		sum += sum
+	}
+	fmt.Println(sum)
+}
+
+func sqrt(x float64) string {
+	// if 문은 () 를 사용 하지 않습니다.
+	if x < 0 {
+		return sqrt(-x) + "i"
+	}
+	return fmt.Sprint(math.Sqrt(x))
+}
+
+func pow(x, n, lim float64) float64 {
+	// 조건문 앞에 가단한 대입 가능
+	if v := math.Pow(x, n); v < lim {
+		return v
+	} else {
+		fmt.Printf("%g >= %g\n", v ,lim)
+	}
+	return lim
+}
+
+func Sqrt(x float64) float64 {
+	return 1
+}
+
+
 func main() {
 	fmt.Println("Hello", math.Pi, "World")
 	fmt.Println("Now you have %g problems.", math.Nextafter(2, 3))
@@ -65,4 +103,14 @@ func main() {
 	fmt.Println(needInt(Small))
 	fmt.Println(needFloat(Small))
 	fmt.Println(needFloat(Big))
+
+	forexamp()
+	fmt.Println(sqrt(2), sqrt(-4))
+
+	fmt.Println(
+		pow(3,2,10),
+		pow(3,2,20),
+	)
+
+	fmt.Println(Sqrt(2))
 }
